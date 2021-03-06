@@ -1,5 +1,82 @@
-h1{
-    color: red;
+@import url("reset.css");
+@import url("normalize.css");
+
+* {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 16px;
+    
+}
+
+body{
+    display: flex;    
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 1440px;
+    margin: auto;
+}
+
+header{
+    display: flex;    
+    flex-direction: column;
+    /* justify-content:space-around; */
+
+} 
+
+header .container{
+    display: flex;
+    height: 400px;
+    flex-direction: column;   
+    align-items: center;    
+    background-repeat: no-repeat;
+    background-image: url('../images/image-hero-desktop.jpg');
+            
+}
+
+.title-menu{
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    align-items: baseline; 
+
+}
+
+
+.title-menu .h1{
+    text-transform: uppercase;
+    
+}
+
+.title-menu .menu a{
+    text-decoration: none;
+}
+
+main{
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+}
+
+main .container{
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    border: 1px solid black;
+}
+.presentation{
+    text-align: center;
+    width: 90%;
+    border: 1px solid black;
+}
+.current-situation{
+    text-align: center;
+    width: 90%;
+    border: 1px solid black;
+}
+.abaut-this-project{
+    width: 90%;
+    border: 1px solid black;
 }
 
 .attribution { 
