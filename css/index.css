@@ -63,10 +63,27 @@ main .container{
     width: 90%;
     border: 1px solid black;
 }
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions div{
+    border: 1px solid black;
+}
+
 .current-situation{
     text-align: center;
     width: 90%;
     border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.current-situation .total-backers{
+    border-left: 1px solid black; 
+    border-right: 1px solid black; 
 }
 .about-this-project{
     width: 90%;
@@ -74,6 +91,10 @@ main .container{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.about-this-project p{
+    max-width: 60ch;
 }
 
 .bamboo-stannd{
