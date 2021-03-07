@@ -4,22 +4,19 @@
 * {
     font-family: 'Commissioner', sans-serif;
     font-size: 16px;
-    
 }
 
 body{
     display: flex;    
     flex-direction: column;
     justify-content: flex-start;
-    width: 1440px;
+    width: 1440px;   
     margin: auto;
 }
 
 header{
     display: flex;    
     flex-direction: column;
-    /* justify-content:space-around; */
-
 } 
 
 header .container{
@@ -28,8 +25,7 @@ header .container{
     flex-direction: column;   
     align-items: center;    
     background-repeat: no-repeat;
-    background-image: url('../images/image-hero-desktop.jpg');
-            
+    background-image: url('../images/image-hero-desktop.jpg');            
 }
 
 .title-menu{
@@ -38,17 +34,15 @@ header .container{
     justify-content: space-between;
     width: 75%;
     align-items: baseline; 
-
 }
 
 
 .title-menu .h1{
     text-transform: uppercase;
-    
 }
 
 .title-menu .menu a{
-    text-decoration: none;
+    color: #FFFFFF;
 }
 
 main{
@@ -74,7 +68,25 @@ main .container{
     width: 90%;
     border: 1px solid black;
 }
-.abaut-this-project{
+.about-this-project{
+    width: 90%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bamboo-stannd{
+    width: 90%;
+    border: 1px solid black;
+}
+
+.black-edition-stand{
+    width: 90%;
+    border: 1px solid black;
+}
+
+.mahogany-special-edition{
     width: 90%;
     border: 1px solid black;
 }
