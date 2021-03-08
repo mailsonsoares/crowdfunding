@@ -1,0 +1,22 @@
+:root {
+    --font-default: 'Commissioner', sans-serif;
+    --font-one-weight: 700;
+    --font-two-weight: 500;
+    --font-three-weight: 400;
+    --font-size-default: 16px;
+
+    --width-default: 1440px;
+    --width-mobile: 375;
+
+    --primary-white: rgb(252, 252, 252);
+    --primary-cyan: hsl(176, 50%, 47%);
+    --primary-dark-cyan: hsl(176, 72%, 28%);
+    --neutral-black: hsl(0, 0%, 0%);
+    --neutral-gray: hsl(0, 2%, 95%);
+    --neutral-dark-gray: hsl(0, 0%, 48%);
+
+    --radius-field: 8px 8px 8px 8px;
+    --radius-button: 50px 50px 50px 50px;
+    --color-border-field: hsl(0, 2%, 90%);
+
+}

@@ -1,16 +1,18 @@
 @import url("reset.css");
 @import url("normalize.css");
+@import url("_variables.css");
 
 * {
-    font-family: 'Commissioner', sans-serif;
-    font-size: 16px;
+    font-family: var(--font-default); 
+    font-weight: var(--font-two-weight);   
+    font-size: var(--font-size-default);  
 }
 
 body{
     display: flex;    
     flex-direction: column;
     justify-content: flex-start;
-    width: 1440px;   
+    width: var(--width-default);   
     margin: auto;
 }
 
@@ -32,23 +34,39 @@ header .container{
     color: #FFFFFF;
     display: flex;
     justify-content: space-between;
-    width: 75%;
+    width: 90%;
     align-items: baseline; 
 }
 
+.crowdfund{
+    width: 70%;
+    padding-left: 2em;
 
-.title-menu .h1{
-    text-transform: uppercase;
 }
 
-.title-menu .menu a{
-    color: #FFFFFF;
+.crowdfund h1{
+    margin-left: 2em;
+}
+
+.menu{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+    padding-right: 2em;
+}
+
+.menu a{
+    color: #FFFFFF;  
+    margin-right: 2em;
+    font-weight: lighter;
 }
 
 main{
     display: flex;    
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
+    background-color: var(--neutral-gray);
 }
 
 main .container{
@@ -56,44 +74,93 @@ main .container{
     flex-direction: column;
     align-items: center;
     width: 60%;
-    border: 1px solid black;
+    /* justify-content: space-around; */
 }
 .presentation{
     text-align: center;
-    width: 90%;
-    border: 1px solid black;
+    width: 85%;   
+    margin-bottom: 1.5em;
+    padding: 2.5em 0 1em 0;
+    background-color: var(--primary-white);
+    border-radius: var(--radius-field);
+    border: 1px solid var(--color-border-field);
+    position: relative;
+    margin-top: -10%;
+    
+}
+
+.presentation img{      
+   
+    
+}
+
+.presentation h2{
+    font-size: 1.5em;
+    font-weight: bold;
+          
+}
+
+.presentation p {
+    font-size: 1em;
+    color: var(--neutral-dark-gray);
 }
 
 .actions{
     display: flex;
     justify-content: space-between;
+    margin: 2em;
 }
 
-.actions div{
-    border: 1px solid black;
+.actions button{    
+    width: 30%;
+    border-radius: var(--radius-button);
+    text-align: center;
+    padding: 1.2em 0;
+    border-style: none;   
+}
+
+.back-this-project{
+    color: var(--primary-white);
+    background-color: var(--primary-dark-cyan);
+}
+
+.bookmark{
+    font-weight: bold;
+    color: var(--neutral-dark-gray);
+    background-color: var(--neutral-gray);
+    background-image: url("../images/icon-bookmark.svg");
+    background-repeat: no-repeat;
 }
 
 .current-situation{
     text-align: center;
-    width: 90%;
-    border: 1px solid black;
+    width: 85%;    
+    margin-bottom: 1.5em;
+    background-color: var(--primary-white);
+    border-radius: var(--radius-field);
+    border: 1px solid var(--color-border-field); 
+}
+
+.current-situation .data-situation{
     display: flex;
     justify-content: space-around;
 }
 
-.current-situation .total-backers{
-    border-left: 1px solid black; 
-    border-right: 1px solid black; 
+.current-situation span{
+    font-size: 1.5em;
+    font-weight: bold;
 }
 .about-this-project{
-    width: 90%;
-    border: 1px solid black;
+    width: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--primary-white);
+    border-radius: var(--radius-field);
+    border: 1px solid var(--color-border-field); 
 }
 
-.about-this-project p{
+.about-this-project .about p{
     max-width: 60ch;
 }
 

@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@500&display=swap" rel="stylesheet">
 
+
   <link rel="stylesheet" href="./css/index.css">
   
   <title>Frontend Mentor | Crowdfunding product page</title>
@@ -18,56 +19,69 @@
 
     <div class="container">
       <div class= "title-menu">
-        <h1 class="title-crowdfunding" title="title of page: crowdfunding">crowdfund</h1>
+        <div class="crowdfund">
+          <h1 class="title-crowdfunding" title="title of page: crowdfunding">crowdfund</h1>
+        </div>
 
         <nav class="menu">
           <a href="">About</a>
           <a href="">Discover</a>
           <a href="">Get Started</a>
         </nav>
-      </div>        
-
+        
+      </div>  
     </div>
-
   </header>
 
   <main>
     <div class="container">
 
       <div class="presentation" title="brief description of the product to be financed.">
+        <img src="./images/logo-mastercraft.svg" alt="">
         <h2>Mastercraft Bamboo Monitor Riser</h2>
         <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p> 
         <div class="actions">
-          <div class="back-this-project"> Back this project</div>
-          <div class="bookmark">Bookmark</div>
+          <button class="back-this-project" title="back this project"> 
+            Back this project
+          </button>
+          <button class="bookmark" title="mark this project">            
+            Bookmark
+          </button>          
         </div>        
       </div>
 
       <div class="current-situation" title="informations about the financing situation.">
-        <div class="recovered-value"> 
-          $89,914 
-          <p>of $100,000 backed</p>
+        <div class="data-situation">
+          <div class="recovered-value"> 
+            <span>$89,914</span>
+            <p>of $100,000 backed</p>
+          </div>
+          <div class="total-backers">
+            <span>5,007</span>
+            <p>total backers</p> 
+          </div>
+          <div class="days-remaining">
+            <span>56</span>
+            <p>days left</p> 
+          </div> 
         </div>
-        <div class="total-backers">
-          5,007 
-          <p>total backers</p> 
-        </div>
-        <div class="days-remaining">
-          56 
-          <p>days left</p> 
-        </div>
-        
+               
+        <div clas="progress-bar">
+          <img src="" alt="">
+        </div>        
       </div>
 
       <div class="about-this-project" title="about the project and how to support it">
-        <h3>About this project</h3>
+        <div class="about">
+          <h3>About this project</h3>
 
-        <p>The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen 
-        to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve 
-        your posture and make you more comfortable while at work, helping you stay focused on the task at hand.</p>
-      
-        <p>Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
-        to allow notepads, pens, and USB sticks to be stored under the stand.</p>
+          <p>The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen 
+          to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve 
+          your posture and make you more comfortable while at work, helping you stay focused on the task at hand.</p>
+        
+          <p>Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
+          to allow notepads, pens, and USB sticks to be stored under the stand.</p>
+        </div>        
         <div class="bamboo-stannd">
           <div class='type-reward'>Bamboo Stand</div>
           <div class='price-of-reward'>Pledge $25 or more</div>
@@ -99,8 +113,8 @@
 
     <div class="modal-start">
       <!-- Selection modal start -->
-      Back this project
-      Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
+      <h3>Back this project</h3>
+      <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
   
       Pledge with no reward
       Choose to support us without a reward if you simply believe in our project. As a backer, 
