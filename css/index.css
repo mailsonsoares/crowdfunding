@@ -90,8 +90,10 @@ main .container{
 }
 
 .presentation img{      
+   position: absolute;
+   margin-top: -10%;
+   margin-left: -4%;
    
-    
 }
 
 .presentation h2{
