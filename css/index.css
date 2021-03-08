@@ -14,6 +14,7 @@ body{
     justify-content: flex-start;
     width: var(--width-default);   
     margin: auto;
+    color: var(--neutral-dark-gray);
 }
 
 header{
@@ -99,6 +100,7 @@ main .container{
 .presentation h2{
     font-size: 1.5em;
     font-weight: bold;
+    color: var(--neutral-black);
           
 }
 
@@ -149,6 +151,7 @@ main .container{
 }
 
 .current-situation span{
+    color: var(--neutral-black);
     font-size: 1.5em;
     font-weight: bold;
 }
@@ -160,6 +163,12 @@ main .container{
     background-color: var(--primary-white);
     border-radius: var(--radius-field);
     border: 1px solid var(--color-border-field); 
+}
+
+.about-this-project .about h3{
+    color: var(--neutral-black);
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
 .about-this-project .about p{
