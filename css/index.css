@@ -115,17 +115,22 @@ main .container{
     margin: 2em;
 }
 
-.actions button{    
+.actions .button{    
     width: 30%;
-    border-radius: var(--radius-button);
-    text-align: center;
-    padding: 1.2em 0;
-    border-style: none;   
+    border-radius: var(--radius-button);    
+    padding: 1em 0;
+    border-style: none;
+    text-align:center;   
 }
 
 .back-this-project{
     color: var(--primary-white);
+    background-color: var(--primary-cyan);
+}
+
+.back-this-project:hover{
     background-color: var(--primary-dark-cyan);
+    cursor: pointer;
 }
 
 .bookmark{
@@ -134,6 +139,12 @@ main .container{
     background-color: var(--neutral-gray);
     background-image: url("../images/icon-bookmark.svg");
     background-repeat: no-repeat;
+    
+}
+
+.bookmark:hover{
+    color: var(--neutral-dark-dark-gray);
+    cursor: pointer;    
 }
 
 .current-situation{
@@ -150,12 +161,30 @@ main .container{
     justify-content: space-around;
 }
 
+.data-situation .recovered-value, .total-backers, .days-remaining{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2.5em 2.5em 1.5em 0;    
+}
+
 .current-situation span{
     color: var(--neutral-black);
     font-size: 1.5em;
     font-weight: bold;
 }
-.about-this-project{
+
+.current-situation p{
+    margin: 0 auto;
+    text-align: left;
+}
+
+.current-situation .progress-bar{
+    margin-bottom: 2em;
+}
+
+
+.about-this-project, .modal-start{
     width: 85%;
     display: flex;
     flex-direction: column;
@@ -165,30 +194,71 @@ main .container{
     border: 1px solid var(--color-border-field); 
 }
 
-.about-this-project .about h3{
+.about-this-project .about, .modal-start .about-pledges{
+    margin: 2em;
+}
+
+.modal-start{
+    margin-top: 1.5em;
+}
+
+.about-this-project h3, .modal-start  h3{
     color: var(--neutral-black);
     font-size: 1.3em;
     font-weight: bold;
 }
 
-.about-this-project .about p{
+.about-this-project h4, .modal-start h4 {
+    color: var(--neutral-black);
+    font-weight: bold;
+}
+
+.about p, .about-pledges p{
     max-width: 60ch;
 }
 
-.bamboo-stannd{
+.bamboo-stand, .black-edition-stand, .mahogany-special-edition, .with-no-reward{
     width: 90%;
-    border: 1px solid black;
+    border-radius: var(--radius-field);
+    border: 1px solid var(--color-border-field); 
+    margin-bottom: 1.5em;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
 }
 
-.black-edition-stand{
-    width: 90%;
-    border: 1px solid black;
+.about-this-project .header, .about-this-project .footer, .modal-start .header, .modal-start .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.mahogany-special-edition{
-    width: 90%;
-    border: 1px solid black;
+.about-this-project .header .price-of-reward, .modal-start .header .price-of-reward{
+    color: var(--primary-cyan);
+    font-size: bold;
 }
+
+.about-this-project .footer .amount span, .modal-start .footer .amount span{
+    color: var(--neutral-black);
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: .5em .5em .5em 1em;
+}
+
+.about-this-project .footer .select{
+    width: 25%;
+    border-radius: var(--radius-button);
+    padding: .5em 1em;
+    border-style: none;
+    text-align: center;
+    color: var(--primary-white);
+    background-color: var(--primary-cyan);
+} 
+
+.about-this-project .footer .select:hover{
+    background-color: var(--primary-dark-cyan);
+    cursor: pointer;
+} 
 
 .attribution { 
     font-size: 11px; text-align: center;
@@ -197,3 +267,5 @@ main .container{
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+
+/* -- modal -- */

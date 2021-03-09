@@ -14,6 +14,7 @@
     --neutral-black: hsl(0, 0%, 0%);
     --neutral-gray: hsl(0, 2%, 95%);
     --neutral-dark-gray: hsl(0, 0%, 48%);
+    --neutral-dark-dark-gray: hsl(0, 0%, 18%);
 
     --radius-field: 8px 8px 8px 8px;
     --radius-button: 50px 50px 50px 50px;
