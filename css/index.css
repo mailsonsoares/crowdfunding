@@ -63,6 +63,10 @@ header .container{
     font-weight: lighter;
 }
 
+.menu a:hover{
+    transform: scale(1.1);
+}
+
 main{
     display: flex;    
     flex-direction: column;
@@ -138,8 +142,7 @@ main .container{
     color: var(--neutral-dark-gray);
     background-color: var(--neutral-gray);
     background-image: url("../images/icon-bookmark.svg");
-    background-repeat: no-repeat;
-    
+    background-repeat: no-repeat;   
 }
 
 .bookmark:hover{
@@ -213,6 +216,11 @@ main .container{
     font-weight: bold;
 }
 
+.modal-start h4:hover {
+    color: var(--primary-dark-cyan); 
+    cursor: pointer;   
+}
+
 .about p, .about-pledges p{
     max-width: 60ch;
 }
@@ -227,11 +235,94 @@ main .container{
     padding: 1.5em;
 }
 
-.about-this-project .header, .about-this-project .footer, .modal-start .header, .modal-start .footer{
+.about-this-project .header, .about-this-project .footer{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;    
 }
+
+.modal-start .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.modal-start .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;        
+}
+
+.modal-start .footer p, .enter-value{
+    width: 50%;       
+}
+
+.enter-value{
+    display: flex;  
+    justify-content: flex-end;
+    align-items: center;      
+}
+
+.enter-value span {
+    margin-right: 2em;     
+}
+
+.enter-value .continue, .done{    
+    border-radius: var(--radius-button);
+    padding: .5em 1em;
+    border-style: none;
+    text-align: center;
+    color: var(--primary-white);
+    background-color: var(--primary-cyan);
+         
+}
+
+.enter-value .continue:hover, .done:hover{
+    background-color: var(--primary-dark-cyan);
+    cursor: pointer;
+} 
+
+.gratefulness{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--primary-white);
+    border-radius: var(--radius-field);
+    border: 1px solid var(--color-border-field);
+    margin: 1.5em 0;
+    padding: 1em 2em;
+}
+
+.gratefulness img{
+    margin-top: 1.5em;
+    transform: scale(1.3);
+}
+
+.gratefulness h3{
+    margin-top: 1.5em;
+    color: var(--neutral-black);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.done{    
+    border-radius: var(--radius-button);
+    padding: .5em 1em;
+    border-style: none;
+    text-align: center;
+    color: var(--primary-white);
+    background-color: var(--primary-cyan);
+    width: 20%;  
+    margin: 1.5em;       
+}
+
+.done:hover{
+    background-color: var(--primary-dark-cyan);
+    cursor: pointer;
+} 
+
 
 .about-this-project .header .price-of-reward, .modal-start .header .price-of-reward{
     color: var(--primary-cyan);
