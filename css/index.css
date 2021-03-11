@@ -94,7 +94,7 @@ main .container{
     
 }
 
-.presentation img{      
+.presentation .logo{      
    position: absolute;
    margin-top: -10%;
    margin-left: -4%;
@@ -121,15 +121,14 @@ main .container{
 
 .actions .button{    
     width: 30%;
-    border-radius: var(--radius-button);    
-    padding: 1em 0;
+    border-radius: var(--radius-button);        
     border-style: none;
     text-align:center;   
 }
 
 .back-this-project{
     color: var(--primary-white);
-    background-color: var(--primary-cyan);
+    background-color: var(--primary-cyan);    
 }
 
 .back-this-project:hover{
@@ -141,14 +140,31 @@ main .container{
     font-weight: bold;
     color: var(--neutral-dark-gray);
     background-color: var(--neutral-gray);
-    background-image: url("../images/icon-bookmark.svg");
-    background-repeat: no-repeat;   
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding-right: 2em; */
+
+    /* background-image: url("../images/icon-bookmark.svg");
+    background-repeat: no-repeat;    */
 }
+
+.bookmark img{
+    width: 25%;
+}
+
+.bookmark label{
+    width: 75%;
+}
+
+
 
 .bookmark:hover{
     color: var(--neutral-dark-dark-gray);
     cursor: pointer;    
 }
+
 
 .current-situation{
     text-align: center;
@@ -187,7 +203,7 @@ main .container{
 }
 
 
-.about-this-project, .modal-start{
+.about-this-project{ 
     width: 85%;
     display: flex;
     flex-direction: column;
@@ -197,12 +213,70 @@ main .container{
     border: 1px solid var(--color-border-field); 
 }
 
-.about-this-project .about, .modal-start .about-pledges{
+.about-this-project .about{
     margin: 2em;
 }
 
+#background-of-the-modal{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, .6);
+    position: fixed;
+    display: none;
+}
+
+#background-of-the-modal:target{
+    display: block;
+}
+
+#background-of-the-modal:target ~ .modal-start{
+    top: 190px;
+    transition: all .4s;
+    transition-delay: .2s;
+}
+
 .modal-start{
-    margin-top: 1.5em;
+    width: 725px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-white);
+    border-radius: var(--radius-field);
+    border: 1px solid var(--color-border-field);
+    position: absolute;
+    top: -1440px;
+    
+    /* display: none;
+    opacity:0; */
+}
+
+#modal-close{    
+    padding: .5em;
+    margin: 2em 1.5em 0 0;
+    background-repeat: no-repeat;
+    align-self: flex-end;
+    /* background-image: url("../images/icon-close-modal.svg");
+    width: 40px;
+    height: 40px; */
+}
+
+#modal-close:hover {
+    cursor: pointer; 
+    /* fill: var(--neutral-black);    */
+}
+
+.modal-start:target {
+    display:flex;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+
+.modal-start span {
+    color: var(--neutral-black);
+    font-weight: bold;
 }
 
 .about-this-project h3, .modal-start  h3{
@@ -220,6 +294,10 @@ main .container{
     color: var(--primary-dark-cyan); 
     cursor: pointer;   
 }
+
+
+/* --- modal effect --- */
+ 
 
 .about p, .about-pledges p{
     max-width: 60ch;
