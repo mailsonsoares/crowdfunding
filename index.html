@@ -40,10 +40,11 @@
         <h2>Mastercraft Bamboo Monitor Riser</h2>
         <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p> 
         <div class="actions">
-          <a href="#background-of-the-modal" class="button back-this-project">Back this project</a>
+          <a href="#background-of-the-modal" class="button back-this-project">
+            <div>Back this project</div>
+          </a>
           <div class="button bookmark" title="mark this project">
-            <img src="./images/icon-bookmark.svg">            
-            <label>Bookmark</label>
+            <div>Bookmark</div>
           </div>          
         </div>        
       </div>
@@ -129,7 +130,7 @@
       <!------- background modal -------->
       <div id="background-of-the-modal"></div>
       <!------- modal -------->
-      <div id="modal-start" class="modal-start">
+      <div id="modal-start" class="modal-start" data-modal>
         <a href="" id="modal-close"> <img src="./images/icon-close-modal.svg" alt="close"> </a>   
         <!-- Selection modal start -->
         <div class="about-pledges">
@@ -137,19 +138,25 @@
           <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
         </div>
 
-        <div class="with-no-reward">
+        <div class="pladges">
           <div class="header">
-            <h4>Pledge with no reward</h4>
+            <label for="no-reward" >
+              <input type="radio" name="radio-pladges" class="radio-pladges" id="no-reward" value="no-reward">
+              Pledge with no reward
+            </label>
           </div>
           <p>Choose to support us without a reward if you simply believe in our project. As a backer, 
           you will be signed up to receive product updates via email.</p>
         </div>
 
-        <div class="bamboo-stand">
+        <div class="pladges">
           <div class="header">        
-            <h4>Bamboo Stand</h4>
+            <label for="bamboo-stand" >
+              <input type="radio" name="radio-pladges" class="radio-pladges" id="bamboo-stand" value="bamboo-stand">
+              Bamboo Stand
+            </label>
             <div class='price-of-reward'>Pledge $25 or more</div>
-            <p><span> 101 </span> left</p>
+            <p><span>101  </span> left</p>
           </div>  
           <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
             you’ll be added to a special Backer member list.</p>
@@ -165,9 +172,12 @@
           <!-- Selected pledge end --> 
         </div>
 
-        <div class="black-edition-stand">
-          <div class="header">        
-            <h4>Black Edition Stand</h4>
+        <div class="pladges">
+          <div class="header">
+            <label for="black-edition-stand" >
+              <input type="radio" name="radio-pladges" class="radio-pladges" id="black-edition-stand" value="black-edition-stand">
+              Black Edition Stand
+            </label>
             <div class='price-of-reward'>Pledge $75 or more</div>
             <p><span> 64 </span> left</p>
           </div>         
@@ -183,9 +193,12 @@
           </div>
           <!-- Selected pledge end -->
         </div>
-        <div class="mahogany-special-edition">
-          <div class="header">        
-            <h4>Mahogany Special Edition</h4>
+        <div class="pladges" >
+          <div class="header">   
+            <label for="mahogany-special-edition" >
+              <input type="radio" name="radio-pladges" class="radio-pladges" id="mahogany-special-edition" value ="mahogany-special-edition">
+              Mahogany Special Edition
+            </label>  
             <div class='price-of-reward'>Pledge $200 or more</div>
             <p><span> 0 </span> left</p>
           </div>
@@ -220,7 +233,7 @@
     </div>    
 
   </main>  
- 
+  <script src="./JS/main.js"></script>
 </body>
 
 </html>
