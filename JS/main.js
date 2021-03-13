@@ -1,16 +1,29 @@
 const pledgeChecked = document.querySelector('[data-modal]'); 
 
-pledgeChecked.addEventListener('change', (evento) =>{
-    
-    let radio = evento.target;
-    let pledge = radio.parentNode.parentNode.parentNode;
+//console.log(pledgeChecked);
 
-    let footerPladge = pledge.querySelector('.footer');
+pledgeChecked.addEventListener('click', (evento) =>{
+    //evento.preventDefault();
 
-    footerPladge.classList.remove('footer');
-    footerPladge.classList.add('show-footer');
+    let allPledges = pledgeChecked.querySelectorAll('.pledges');
+    //console.log(allPledges);
 
-    console.log(footerPladge);
+    allPledges.forEach( pledge =>{
+
+        console.log(pledge);
+
+        if(pledge.checked){
+            console.log('Show!!!');
+        }        
+        else{
+            console.log('não');
+        }
+        
+    });
    
 });
+
+
+
+
 
