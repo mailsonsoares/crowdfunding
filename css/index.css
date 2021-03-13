@@ -140,17 +140,22 @@ main .container{
     font-weight: bold;
     color: var(--neutral-dark-gray);
     background-color: var(--neutral-gray);
-    text-align: right;
+    text-align: center;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 1em 1em 1em 4em;
-    background-image: url("../images/icon-bookmark.svg");
-    background-repeat: no-repeat;
+    justify-content: space-around;
 }
 
-.bookmark:hover{
-    color: var(--neutral-dark-dark-gray);
+#bookmark-span{
+    width: 60%;
+}
+
+#bookmark-img.bookmarked, #bookmark-span.bookmarked{
+    filter: invert(65%) sepia(8%) saturate(2742%) hue-rotate(127deg) brightness(92%) contrast(94%);
+}
+
+.bookmark:hover{    
+    color: var(--primary-dark-cyan);
     cursor: pointer;    
 }
 
@@ -206,37 +211,43 @@ main .container{
     margin: 2em;
 }
 
-#background-of-the-modal{
+#overlay-modal{
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
+    left: 0;  
+    
+}
+
+#overlay-modal.show{
     background-color: rgba(0,0,0, .6);
     position: fixed;
-    display: none;
+    /* pointer-events: none; */
+    transition: .3s;
+    
 }
 
-#background-of-the-modal:target{
-    display: block;
-}
-
-#background-of-the-modal:target ~ .modal-start{
-    top: 190px;
-    transition: all .4s;
-    transition-delay: .2s;
-}
 
 .modal-start{
-    width: 725px;
+    width: 725px;    
+    background-color: var(--primary-white);
+    border-radius: var(--radius-field);
+    border: 1px solid var(--color-border-field);   
+    position: absolute;
+    top: -1440px;
+       
+}
+
+.modal-start.show {
+    top: 400px;
+    transition: .9s;
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--primary-white);
-    border-radius: var(--radius-field);
-    border: 1px solid var(--color-border-field);
-    position: absolute;
-    top: -1440px;
-
+    margin-top: -20em;
+    margin-bottom: 1em;
+    overflow: scroll;    
 }
 
 #modal-close{    
@@ -244,6 +255,8 @@ main .container{
     margin: 2em 1.5em 0 0;
     background-repeat: no-repeat;
     align-self: flex-end;
+    border: none;
+    background-color: var(--primary-white);
 
 }
 
@@ -251,13 +264,6 @@ main .container{
     cursor: pointer; 
 
 }
-
-.modal-start:target {
-    display:flex;
-    pointer-events: auto;
-    opacity: 1;
-}
-
 
 .modal-start span {
     color: var(--neutral-black);
@@ -305,6 +311,12 @@ main .container{
     padding: 1.5em;    
 }
 
+.pledges.show{
+    transition: .3s;
+    border-radius: var(--radius-field);
+    border: 3px solid var(--primary-dark-cyan);        
+}
+
 .about-this-project .header, .about-this-project .footer{
     display: flex;
     justify-content: space-between;
@@ -319,10 +331,10 @@ main .container{
 
 .modal-start .footer{
     display: none;
-   
+    
 }
 
-.show-footer{ 
+.modal-start .footer.show{ 
     width: 100%;   
     display: flex;
     justify-content: space-between;
@@ -361,7 +373,7 @@ main .container{
     cursor: pointer;
 } 
 
-.gratefulness{
+.modal-gratefulness{
     width: 65%;
     display: flex;
     flex-direction: column;
@@ -374,12 +386,12 @@ main .container{
     padding: 1em 2em;
 }
 
-.gratefulness img{
+.modal-gratefulness img{
     margin-top: 1.5em;
     transform: scale(1.3);
 }
 
-.gratefulness h3{
+.modal-gratefulness h3{
     margin-top: 1.5em;
     color: var(--neutral-black);
     font-size: 1.5em;
