@@ -6,13 +6,16 @@
     --font-size-default: 17px;
 
     --width-default: 1440px;
-    --width-mobile: 375;
+    --width-mobile: 375px;
 
     --primary-white: rgb(252, 252, 252);
+    --neutral-cyan: rgba(60,180,172,0.118);
+    --primary-light-cyan: hsl(175, 40%, 89%);
     --primary-cyan: hsl(176, 50%, 47%);
     --primary-dark-cyan: hsl(176, 72%, 28%);
     --neutral-black: hsl(0, 0%, 0%);
     --neutral-gray: hsl(0, 2%, 95%);
+    --neutral-gray-is: hsla(0, 0%, 92%, 1);
     --neutral-dark-gray: hsl(0, 0%, 48%);
     --neutral-dark-dark-gray: hsl(0, 0%, 18%);
 

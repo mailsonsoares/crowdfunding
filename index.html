@@ -40,9 +40,9 @@
         <h2>Mastercraft Bamboo Monitor Riser</h2>
         <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p> 
         <div class="actions">
-          <button class="button back-this-project" data-modal-open = "#modal-start"> <!-- href="#background-of-the-modal" -->
+          <div class="button back-this-project" data-modal-open = "#modal-start"> <!-- href="#background-of-the-modal" -->
             <div>Back this project</div>
-          </button>
+          </div>
           <div class="button bookmark" title="mark this project">
             <img id="bookmark-img" src="./images/icon-bookmark.svg" alt="Mark this project">
             <span id="bookmark-span">Bookmark</span>
@@ -52,22 +52,22 @@
 
       <div class="current-situation" title="informations about the financing situation.">
         <div class="data-situation">
-          <div class="recovered-value"> 
+          <div class ="item-situation" id="recovered-value"> 
             <span>$89,914</span>
             <p>of $100,000 backed</p>
           </div>
-          <div class="total-backers">
+          <div class ="item-situation" id="total-backers">
             <span>5,007</span>
             <p>total backers</p> 
           </div>
-          <div class="days-remaining">
+          <div class ="item-situation" id="days-remaining">
             <span>56</span>
             <p>days left</p> 
           </div> 
         </div>
                
         <div class="progress-bar">
-          ======================= bar here =========================
+          <div class="bar-fill"></div>
         </div>        
       </div>
 
@@ -93,7 +93,7 @@
             <div class="amount">
               <span>101</span>left
             </div>
-            <div class="select">Select Reward</div>
+            <div class="select" data-modal-open = "#modal-start" data-pledge='1'>Select Reward</div>
           </div>          
         </div>
 
@@ -108,7 +108,7 @@
             <div class="amount">
               <span>64</span>left
             </div>
-            <div class="select">Select Reward</div>
+            <div class="select" data-modal-open = "#modal-start" data-pledge='2'>Select Reward</div>
           </div>
         </div>
 
@@ -123,7 +123,7 @@
             <div class="amount">
               <span>0</span>left
             </div>
-            <div class="select">Out of Stock</div>
+            <div class="select" data-modal-open = "#modal-start" data-pledge='3'>Out of Stock</div>
           </div>
         </div>
 
@@ -140,7 +140,7 @@
             <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
           </div>
   
-          <div class="pledges">
+          <div class="pledges" >
             <div class="header">
               <label for="no-reward" >
                 <input type="radio" name="radio-pledges" class="radio-pledges" id="no-reward" value="no-reward">
@@ -172,7 +172,7 @@
             <div class="footer">            
               <p>Enter your pledge</p>
               <form action="" class="enter-value" id="bamboo-stand-form">
-                <span>$25</span>
+                <input placeholder="$25" type="number" min="25.00" step="1.00">
                 <div class="continue">Continue</div>
               </form>                                  
             </div>
@@ -192,7 +192,7 @@
             <div class="footer">            
               <p>Enter your pledge</p>
               <form action="" class="enter-value" id="black-edition-stand-form">
-                <span>$75</span>
+                <input placeholder="$75" type="number" min="75.00" step="1.00" >                
                 <div class="continue">Continue</div>
               </form>                                  
             </div>         
@@ -212,7 +212,7 @@
             <div class="footer">            
               <p>Enter your pledge</p>
               <form action="" class="enter-value" id="black-edition-stand-form">              
-                  <span>$200</span>
+                  <input placeholder="$200" type="number" min="200.00" step="1.00">
                   <div class="continue">Continue</div>              
               </form>                                  
             </div>         

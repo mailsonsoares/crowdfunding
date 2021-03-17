@@ -146,18 +146,25 @@ main .container{
     justify-content: space-around;
 }
 
+.bookmark:hover{    
+    color: var(--primary-dark-cyan);
+    background-color: var(--primary-light-cyan);
+    cursor: pointer;    
+}
+
+
 #bookmark-span{
-    width: 60%;
+    width: 70%;
+}
+
+.bookmark.bookmarked{
+    background-color: var(--neutral-cyan);
 }
 
 #bookmark-img.bookmarked, #bookmark-span.bookmarked{
     filter: invert(65%) sepia(8%) saturate(2742%) hue-rotate(127deg) brightness(92%) contrast(94%);
 }
 
-.bookmark:hover{    
-    color: var(--primary-dark-cyan);
-    cursor: pointer;    
-}
 
 
 .current-situation{
@@ -167,18 +174,26 @@ main .container{
     background-color: var(--primary-white);
     border-radius: var(--radius-field);
     border: 1px solid var(--color-border-field); 
+    padding: 0em 2em;
 }
 
 .current-situation .data-situation{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    /* padding: 0 1em; */
 }
 
-.data-situation .recovered-value, .total-backers, .days-remaining{
+.data-situation .item-situation{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 2.5em 2.5em 1.5em 0;    
+    margin: 2.5em 0em 1.5em 0em;  
+    padding-right: 3em ;
+    border-right: 3px solid var(--neutral-gray-is);  
+}
+
+.data-situation .item-situation:last-child{
+    border-right: none;  
 }
 
 .current-situation span{
@@ -241,7 +256,7 @@ main .container{
 .modal-start.show {
     top: 400px;
     transition: .9s;
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -308,7 +323,7 @@ main .container{
     margin-bottom: 1.5em;
     display: flex;
     flex-direction: column;
-    padding: 1.5em;    
+    padding: 1em;    
 }
 
 .pledges.show{
@@ -354,18 +369,29 @@ main .container{
     align-items: center;      
 }
 
-.enter-value span {
-    margin-right: 2em;     
+.enter-value .continue, .enter-value input, .done{    
+    border-radius: var(--radius-button);
+    padding: .5em 1em;    
+    text-align: center;         
 }
 
-.enter-value .continue, .done{    
-    border-radius: var(--radius-button);
-    padding: .5em 1em;
+.enter-value input, .enter-value .continue {
+    width: 35%;     
+}
+
+.enter-value input{
+    margin-right: .5em;     
+}
+
+.enter-value .continue, .done{   
     border-style: none;
-    text-align: center;
     color: var(--primary-white);
     background-color: var(--primary-cyan);
          
+}
+
+.enter-value input:hover{   
+    border: 3px solid var(--primary-cyan);         
 }
 
 .enter-value .continue:hover, .done:hover{
@@ -425,6 +451,20 @@ main .container{
     font-size: 1.3em;
     font-weight: bold;
     padding: .5em .5em .5em 1em;
+}
+
+.progress-bar{
+    width: 100%; 
+    height: .6rem;
+    border-radius: 100px;
+    background-color: var(--neutral-gray-is);
+}
+
+.bar-fill{
+    height: 100%;
+    background-color:var(--primary-cyan);
+    border-radius: 100px;
+    transition: width .5s;
 }
 
 .about-this-project .footer .select{
