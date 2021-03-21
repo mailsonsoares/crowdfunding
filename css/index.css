@@ -127,13 +127,14 @@ main .container{
 }
 
 .actions .button{    
-    width: 30%;
+    /* width: 30%; */
     border-radius: var(--radius-button);        
     border-style: none;
     text-align:center;   
 }
 
 .back-this-project{
+    width: auto;
     color: var(--primary-white);
     background-color: var(--primary-cyan);    
     padding: 1em ;
@@ -145,6 +146,7 @@ main .container{
 }
 
 .bookmark{
+    width: 25%;
     font-weight: bold;
     color: var(--neutral-dark-gray);
     background-color: var(--neutral-gray);
@@ -631,9 +633,18 @@ main .container{
         margin: 1.5em;
     }
 
-    .actions .button{
+    /* .actions .button{
         width: auto;
+    } */
+
+    .back-this-project{
+        width: 60%;
     }
+
+    .bookmark{
+        width: 30%;
+    }
+
 
     .back-this-project{
         padding: 0em 2.5em;
@@ -755,9 +766,9 @@ main .container{
            
     } 
 
-    .modal-start .enter-value input, 
-    .modal-start .enter-value button{
-        padding: 1em 2em;
+    .modal-start .footer.show .enter-value input, 
+    .modal-start .footer.show .enter-value button{
+        /* padding: 1em 2em; */
         text-align: center;
         width: 48%;           
     } 
