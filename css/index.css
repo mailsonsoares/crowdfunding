@@ -603,11 +603,11 @@ main .container{
     }
 
     main{
-        margin-top: -30%;
+        margin-top: -35%;
     }
 
     main .container{
-        margin-top: -5%;        
+        margin-top: 2%;        
         width: 98%;
     }
 
@@ -632,10 +632,6 @@ main .container{
     .actions{
         margin: 1.5em;
     }
-
-    /* .actions .button{
-        width: auto;
-    } */
 
     .back-this-project{
         width: 60%;
@@ -718,8 +714,8 @@ main .container{
     }
 
     .modal-start{
-        min-width: 55vh;
-        max-height: 90vh;       
+        min-width: 60vh;
+        /* max-height: 90vh;        */
            
     }
 
