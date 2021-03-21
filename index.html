@@ -42,7 +42,7 @@
         <p>A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p> 
         <div class="actions">
           <button class="button back-this-project" data-modal-open = "#modal-start"> <!-- href="#background-of-the-modal" -->
-            <div>Back this project</div>
+            <span>Back this project</span>
           </button>
           <div class="button bookmark" title="mark this project">
             <img id="bookmark-img" src="./images/icon-bookmark.svg" alt="Mark this project">
@@ -86,7 +86,7 @@
         <div class="pledges bamboo-pledge" id="bamboo-stand-front">
           <div class="header">
             <h4>Bamboo Stand<h4>
-            <div class='price-of-reward'>Pledge $25 or more</div>
+            <p class='price-of-reward'>Pledge $25 or more</p>
           </div>          
           <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
           you’ll be added to a special Backer member list.</p>
@@ -101,7 +101,7 @@
         <div class="pledges black-edition-pledge" id="black-edition-stand-front">
           <div class="header">
             <h4>Black Edition Stand</h4>
-            <div class='price-of-reward'>Pledge $75 or more</div>
+            <p class='price-of-reward'>Pledge $75 or more</p>
           </div>
           <p>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer 
           member list. Shipping is included.</p>
@@ -116,7 +116,7 @@
         <div class="pledges special-edition-pledge" id="mahogany-special-edition-front">
           <div class="header">
             <h4> Special Edition </h4>
-            <div class='price-of-reward'> Pledge $200 or more </div>
+            <p class='price-of-reward'> Pledge $200 or more </p>
           </div>
           <p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added 
           to our Backer member list. Shipping is included.</p>
@@ -129,13 +129,13 @@
         </div>
 
       </div>
-      <!------- background modal -------->
+      <!-- background modal -->
       <div id="overlay-modal"></div>
-      <!------- modal -------->
-      <!-- <div class="container-modais"> -->
+      <!-- modal -->
+      
         <div id="modal-start" class="modal-start" data-modal>
           <button id="modal-close" data-modal-close> <img src="./images/icon-close-modal.svg" alt="close"> </button>   <!-- href= ""-->
-          <!-- continueion modal start -->
+          
           <div class="about-pledges">
             <h3>Back this project</h3>
             <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
@@ -152,8 +152,7 @@
             you will be signed up to receive product updates via email.</p>
             <div class="footer">            
               <p>No pledge</p>
-              <form action="" class="enter-value" id="no-reward-form">
-                <!-- <input class= "pledges-value" placeholder="$0" type="number" value="0" readonly> -->
+              <form action="#" class="enter-value" id="no-reward-form">
                 <button class="continue">Continue</button>                
               </form>                                  
             </div>
@@ -175,8 +174,8 @@
               you’ll be added to a special Backer member list.</p>         
             <div class="footer">            
               <p>Enter your pledge</p>
-              <form action="" class="enter-value" id="bamboo-stand-form">
-                <input class= "pledges-value" required placeholder="$25" type="number" min="25.00" step="1.00">
+              <form action="#" class="enter-value" id="bamboo-stand-form">
+                <input title ="Insira um valor a partir de $25." class= "pledges-value" required placeholder="$25" type="number" min="25.00" step="1.00">
                 <button class="continue">Continue</button>
               </form>                                  
             </div>
@@ -198,8 +197,8 @@
             member list. Shipping is included.</p>          
             <div class="footer">            
               <p>Enter your pledge</p>
-              <form action="" class="enter-value" id="black-edition-stand-form">
-                <input class= "pledges-value" placeholder="$75" type="number" min="75.00" step="1.00" required >                
+              <form action="#" class="enter-value" id="black-edition-stand-form">
+                <input title ="Insira um valor a partir de $75." class= "pledges-value" placeholder="$75" type="number" min="75.00" step="1.00" required >                
                 <button class="continue">Continue</button>
               </form>                                  
             </div>         
@@ -221,8 +220,8 @@
             to our Backer member list. Shipping is included.</p>         
             <div class="footer">            
               <p>Enter your pledge</p>
-              <form action="" class="enter-value" id="special-edition-stand-form">              
-                  <input class= "pledges-value" placeholder="$200" type="number" min="200.00" step="1.00" required>
+              <form action="#" class="enter-value" id="special-edition-stand-form">              
+                  <input title ="Insira um valor a partir de $200." class= "pledges-value" placeholder="$200" type="number" min="200.00" step="1.00" required>
                   <button class="continue">Continue</button>              
               </form>                                  
             </div>         
@@ -232,21 +231,16 @@
   
         <!--  modal gratefulness -->
         <div class="modal-start modal-gratefulness" id="modal-gratefulness" title="Tanks for your support!">
-          <!-- Success modal start -->
-          <img src="./images/icon-check.svg">
+          
           <h3>Thanks for your support!</h3>
           <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
           an email once our campaign is completed.</p>
           <div class="done" data-modal-close>
             Got it!
           </div>
-          
-          <!-- Success modal end -->
-        </div>
-        
-      <!-- </div> -->
+                    
+        </div>    
       
-
     </div>    
 
   </main>  
