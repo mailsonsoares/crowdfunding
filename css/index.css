@@ -367,31 +367,33 @@ main .container{
     align-items: center;
     border-top: 1px solid var(--neutral-dark-gray);    
     padding: 1em;
+    margin: 0 auto;
 }
 
 
-.modal-start .footer p, .enter-value{
+.modal-start .footer.show{
     
-    width: 50%;       
+    width: 100%;       
 }
 
 .enter-value{
     display: flex;  
-    justify-content: space-around;
-    align-items: center;      
+    justify-content: space-between;
+    align-items: center; 
+    text-align: center;     
 }
 
 .enter-value .continue, .enter-value input, .done{    
     border-radius: var(--radius-button);
-    padding: 1em 1em;   
+   
 }
 
 .enter-value input, .enter-value .continue {
-    width: 40%;     
+    width: 45%;     
 }
 
 .enter-value input{
-    padding-left: 1.5rem;     
+    padding-left: 1rem;     
 }
 
 .enter-value .continue, .done{   
@@ -559,8 +561,9 @@ main .container{
     }
     
     .crowdfund{
+        width: 50%;
         padding-left: 0;
-        margin: 1em 2em 0em 2em;
+        margin: 1em 0em 0em 2em;
     }
 
     .crowdfund h1{
@@ -573,7 +576,7 @@ main .container{
         margin: 1em 2em 0em 0em;
     }
 
-    .menu{
+    .menu{        
         display: none;        
     }
 
@@ -604,11 +607,11 @@ main .container{
     }
 
     main{
-        margin-top: -27%;
+        margin-top: -28%;
     }
 
     main .container{
-        margin-top: 2.5%;        
+        margin-top: -3%;        
         width: 98%;
     }
 
