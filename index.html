@@ -21,8 +21,11 @@
         <div class="crowdfund">
           <h1 class="title-crowdfunding" title="title of page: crowdfunding">crowdfund</h1>
         </div>
+        <div class="menu-toggle" >
+          <img src="./images/icon-hamburger.svg" class="img-toggle" alt="menu toggle">
+        </div>
 
-        <nav class="menu">
+        <nav class="menu">          
           <a href="">About</a>
           <a href="">Discover</a>
           <a href="">Get Started</a>
@@ -80,7 +83,7 @@
           <p>Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
           to allow notepads, pens, and USB sticks to be stored under the stand.</p>
         </div>        
-        <div class="pledges bamboo" id="bamboo-stand-front">
+        <div class="pledges bamboo-pledge" id="bamboo-stand-front">
           <div class="header">
             <h4>Bamboo Stand<h4>
             <div class='price-of-reward'>Pledge $25 or more</div>
@@ -89,13 +92,13 @@
           you’ll be added to a special Backer member list.</p>
           <div class="footer">
             <div class="amount">
-              <div class="inventory">2</div><span>left</span>
+              <div class="bamboo-inventory">3</div><span>left</span>
             </div>
-            <button class="select" data-modal-open = "#modal-start" data-pledge='1'>Select Reward</button>
+            <button class="continue" data-modal-open = "#modal-start" data-pledge='1'>Select Reward</button>
           </div>          
         </div>
 
-        <div class="pledges black-edition" id="black-edition-stand-front">
+        <div class="pledges black-edition-pledge" id="black-edition-stand-front">
           <div class="header">
             <h4>Black Edition Stand</h4>
             <div class='price-of-reward'>Pledge $75 or more</div>
@@ -104,13 +107,13 @@
           member list. Shipping is included.</p>
           <div class="footer">
             <div class="amount">
-              <div class="inventory">64</div><span>left</span>
+              <div class="black-edition-inventory">64</div><span>left</span>
             </div>
-            <button class="select" data-modal-open = "#modal-start" data-pledge='2'>Select Reward</button>
+            <button class="continue" data-modal-open = "#modal-start" data-pledge='2'>Select Reward</button>
           </div>
         </div>
 
-        <div class="pledges special-edition" id="mahogany-special-edition-front">
+        <div class="pledges special-edition-pledge" id="mahogany-special-edition-front">
           <div class="header">
             <h4> Special Edition </h4>
             <div class='price-of-reward'> Pledge $200 or more </div>
@@ -119,9 +122,9 @@
           to our Backer member list. Shipping is included.</p>
           <div class="footer">
             <div class="amount">
-              <div class="inventory">0</div><span>left</span>
+              <div class="special-edition-inventory">1</div><span>left</span>
             </div>
-            <button class="select" data-modal-open = "#modal-start" data-pledge='3'>Select Reward</button>
+            <button class="continue" data-modal-open = "#modal-start" data-pledge='3'>Select Reward</button>
           </div>
         </div>
 
@@ -132,13 +135,13 @@
       <!-- <div class="container-modais"> -->
         <div id="modal-start" class="modal-start" data-modal>
           <button id="modal-close" data-modal-close> <img src="./images/icon-close-modal.svg" alt="close"> </button>   <!-- href= ""-->
-          <!-- Selection modal start -->
+          <!-- continueion modal start -->
           <div class="about-pledges">
             <h3>Back this project</h3>
             <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
           </div>
   
-          <div class="pledges" >
+          <div class="pledges" data-pledges='1'>
             <div class="header">
               <label for="no-reward" >
                 <input type="radio" name="radio-pledges" class="radio-pledges" id="no-reward" value="no-reward">
@@ -150,13 +153,13 @@
             <div class="footer">            
               <p>No pledge</p>
               <form action="" class="enter-value" id="no-reward-form">
-                <span>$0</span>
-                <button class="continue">Continue</button>
+                <!-- <input class= "pledges-value" placeholder="$0" type="number" value="0" readonly> -->
+                <button class="continue">Continue</button>                
               </form>                                  
             </div>
           </div>
   
-          <div class="pledges bamboo">
+          <div class="pledges bamboo-pledge" data-pledges='2'>
             <div class="header">        
               <label for="bamboo-stand" >
                 <input type="radio" name="radio-pledges" class="radio-pledges" id="bamboo-stand" value="bamboo-stand">
@@ -164,7 +167,7 @@
               </label>
               <div class='price-of-reward'>Pledge $25 or more</div>
               <div class = "amount">
-                <div class = "inventory">101</div>
+                <div class = "bamboo-inventory">3</div>
                 <span>left</span>
               </div>              
             </div>  
@@ -173,13 +176,13 @@
             <div class="footer">            
               <p>Enter your pledge</p>
               <form action="" class="enter-value" id="bamboo-stand-form">
-                <input required placeholder="$25" type="number" min="25.00" step="1.00">
+                <input class= "pledges-value" required placeholder="$25" type="number" min="25.00" step="1.00">
                 <button class="continue">Continue</button>
               </form>                                  
             </div>
           </div>
   
-          <div class="pledges black-edition">
+          <div class="pledges black-edition-pledge" data-pledges='3'>
             <div class="header">
               <label for="black-edition-stand" >
                 <input type="radio" name="radio-pledges" class="radio-pledges" id="black-edition-stand" value="black-edition-stand">
@@ -187,7 +190,7 @@
               </label>
               <div class='price-of-reward'>Pledge $75 or more</div>
               <div class = "amount">
-                <div class = "inventory">64</div>
+                <div class = "black-edition-inventory">64</div>
                 <span>left</span>
               </div> 
             </div>         
@@ -196,13 +199,13 @@
             <div class="footer">            
               <p>Enter your pledge</p>
               <form action="" class="enter-value" id="black-edition-stand-form">
-                <input placeholder="$75" type="number" min="75.00" step="1.00" required >                
+                <input class= "pledges-value" placeholder="$75" type="number" min="75.00" step="1.00" required >                
                 <button class="continue">Continue</button>
               </form>                                  
             </div>         
           </div>
   
-          <div class="pledges special-edition" >
+          <div class="pledges special-edition-pledge" data-pledges='4'>
             <div class="header">   
               <label for="mahogany-special-edition" >
                 <input type="radio" name="radio-pledges" class="radio-pledges" id="mahogany-special-edition" value ="mahogany-special-edition">
@@ -210,7 +213,7 @@
               </label>  
               <div class='price-of-reward'>Pledge $200 or more</div>
               <div class = "amount">
-                <div class = "inventory">0</div>
+                <div class = "special-edition-inventory">1</div>
                 <span>left</span>
               </div> 
             </div>
@@ -218,8 +221,8 @@
             to our Backer member list. Shipping is included.</p>         
             <div class="footer">            
               <p>Enter your pledge</p>
-              <form action="" class="enter-value" id="black-edition-stand-form">              
-                  <input placeholder="$200" type="number" min="200.00" step="1.00" required>
+              <form action="" class="enter-value" id="special-edition-stand-form">              
+                  <input class= "pledges-value" placeholder="$200" type="number" min="200.00" step="1.00" required>
                   <button class="continue">Continue</button>              
               </form>                                  
             </div>         
@@ -247,7 +250,7 @@
     </div>    
 
   </main>  
-  <script src="./JS/main.js"></script>
+  <script type="module" src="./JS/main.js"></script>
 </body>
 
 </html>

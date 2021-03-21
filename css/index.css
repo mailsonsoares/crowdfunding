@@ -9,23 +9,19 @@
     
 }
 
-html{
-    display: block;
-    margin:auto;
-    color: var(--neutral-dark-gray);
-    width: var(--width-default); 
-}
 
 body{
-    height: 100%;
     display: flex;    
     flex-direction: column;
     justify-content: flex-start;
+    margin:auto;
+    color: var(--neutral-dark-gray);
+    width: var(--width-default); 
   
 } 
 
 .container{
-    margin-bottom: 4em;
+    margin-bottom: 2em;
 }
 
 header {
@@ -53,6 +49,10 @@ header {
 
 .crowdfund h1{
     margin-left: 2em;
+}
+
+.menu-toggle{
+    display: none;
 }
 
 .menu{
@@ -115,7 +115,8 @@ main .container{
 }
 
 .presentation p {
-    font-size: 1em;
+    margin-top: .5em;
+    font-size: 1.1em;
     color: var(--neutral-dark-gray);
 }
 
@@ -250,8 +251,9 @@ main .container{
 
 .modal-start{
     position: fixed ;
-    max-width: 800px;
-    min-width: 450px; 
+    max-width: 99vh;
+    max-height: 99vh;
+    overflow: scroll;
     top: 50%;
     left: 50%;
     z-index: 10;   
@@ -264,6 +266,10 @@ main .container{
     flex-direction: column;
     align-items: center;
        
+}
+
+.modal-start::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 .modal-start.show {   
@@ -308,8 +314,16 @@ main .container{
     height: 1em;    
 }
 
+.modal-start .pledges p{
+    margin: 1.5em 0em;   
+}
 
-/* --- modal effect --- */ 
+
+
+.about-pledges{
+    width: 90%;
+    margin-bottom: 1.5em;
+}
 .about p, .about-pledges p{
     max-width: 60ch;
 }
@@ -329,16 +343,6 @@ main .container{
 .pledges.show{    
     border: 3px solid var(--primary-dark-cyan);        
 }
-
-.sold-off{
-    opacity: .5;
-    pointer-events: none;   
-}
-
-/* .sold-off button{
-    background-color: var(--neutral-dark-gray);   
-} */
-
 
 .about-this-project .header, .about-this-project .footer{
     display: flex;
@@ -367,33 +371,43 @@ main .container{
 
 
 .modal-start .footer p, .enter-value{
+    
     width: 50%;       
 }
 
 .enter-value{
     display: flex;  
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;      
 }
 
 .enter-value .continue, .enter-value input, .done{    
     border-radius: var(--radius-button);
-    padding: .5em 1em;    
-    text-align: center;         
+    padding: 1em 1em;   
 }
 
 .enter-value input, .enter-value .continue {
-    width: 35%;     
+    width: 40%;     
 }
 
 .enter-value input{
-    margin-right: .5em;     
+    padding-left: 1.5rem;     
 }
 
 .enter-value .continue, .done{   
     border-style: none;
     color: var(--primary-white);
     background-color: var(--primary-cyan);
+         
+}
+
+.enter-value .continue.sold-off-button{
+    background-color: var(--neutral-dark-gray);   
+} 
+
+.sold-off{   
+    opacity: .5;
+    pointer-events: none; 
          
 }
 
@@ -409,7 +423,7 @@ main .container{
 
 
 .modal-gratefulness{    
-    width: 45%;
+    max-width: 70vh;
     background-color: var(--primary-white);
     border-radius: var(--radius-field);
     border: 1px solid var(--color-border-field);
@@ -432,12 +446,12 @@ main .container{
 
 .modal-gratefulness .done{    
     border-radius: var(--radius-button);
-    padding: .5em 1em;
+    padding: 1em 1.5em;
     border-style: none;
     text-align: center;
     color: var(--primary-white);
     background-color: var(--primary-cyan);
-    width: 20%;  
+    width: auto;  
     margin: 1.5em;       
 }
 
@@ -457,7 +471,15 @@ main .container{
     align-items: baseline;
 }
 
-.inventory{
+.about-this-project .pledges .footer .amount div{
+    font-size: 2em;
+    padding: 0em .2em;
+
+}
+
+.bamboo-inventory,
+.black-edition-inventory,
+.special-edition-inventory{
     color: var(--neutral-black);
     font-size: 1.3em;
     font-weight: bold;
@@ -478,14 +500,23 @@ main .container{
     transition: width .5s;
 }
 
-.about-this-project .footer button{
+.about-this-project p{
+    margin: 1em 0em;
+} 
+
+.about-this-project .continue{
     width: 25%;
     border-radius: var(--radius-button);
-    padding: .5em 1em;
+    padding: 1em;
     border-style: none;
     text-align: center;
     color: var(--primary-white);
     background-color: var(--primary-cyan);
+} 
+
+.about-this-project .continue.sold-off-button{
+    
+    background-color: var(--neutral-dark-gray);
 } 
 
 .about-this-project .footer button:hover{
@@ -493,12 +524,251 @@ main .container{
     cursor: pointer;
 } 
 
-.attribution { 
+/* .attribution { 
     font-size: 11px; text-align: center;
  }
 
 .attribution a { 
     color: hsl(228, 45%, 44%); 
-}
+} */
 
-/* -- modal -- */
+@media (max-width: 450px){
+    
+    body{
+        width: auto;
+    }
+
+    header{
+        background-repeat: no-repeat;
+        background-image: url('../images/image-hero-mobile.jpg');
+        background-size: contain;
+
+    }
+
+    .title-menu{
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap:wrap;
+    }
+    
+    .crowdfund{
+        padding-left: 0;
+        margin: 1em 2em 0em 2em;
+    }
+
+    .crowdfund h1{
+        margin: 0;
+        font-size: 1.5em;
+    }
+
+    .menu-toggle{
+        display: block;
+        margin: 1em 2em 0em 0em;
+    }
+
+    .menu{
+        display: none;        
+    }
+
+    .menu.show{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;        
+        padding: .5em;
+        margin: 1em auto;
+        width: 84%;       
+        background-color: var(--neutral-gray);
+        border-radius: var(--radius-field);       
+    }
+
+    .menu.show a{
+        flex-direction: column;
+        text-align: left;
+        color: black;
+        padding: .5em;
+        font-size: 1.2em;
+        width: 100%;
+        border-bottom: 3px solid var(--neutral-gray-is);
+    }
+
+    .menu a:last-child{
+        
+        border-bottom: none;
+    }
+
+    main{
+        margin-top: -27%;
+    }
+
+    main .container{
+        margin-top: 2.5%;        
+        width: 98%;
+    }
+
+    .presentation .logo{
+        position: absolute;
+        margin-top: -24%;
+        margin-left: -8%;
+    }
+
+    .presentation h2{
+        margin: auto;
+        padding-bottom: .5em;
+        font-size: 1.4em;
+        max-width: 15ch;
+    }
+
+    .presentation p{
+        font-size: .9em;
+        font-weight:lighter;
+    }
+
+    .actions{
+        margin: 1.5em;
+    }
+
+    .actions .button{
+        width: auto;
+    }
+
+    .back-this-project{
+        padding: 0em 2.5em;
+    }
+
+    .bookmark span{
+        display: none;
+    }
+
+    .data-situation{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .data-situation .item-situation span{
+        font-weight: bold;
+        font-size: 1.7em;
+
+    }
+
+    .data-situation .item-situation{
+        flex-direction: column;
+        align-items: center;
+        margin: 1.5em 0em 0em 0em;
+        padding: 0em 0em 1.5em 0em;
+        border-right: none;
+        border-bottom: 3px solid var(--neutral-gray-is);
+    }
+
+    .data-situation .item-situation:last-child{
+        border-bottom: none;
+    }
+
+    .about-this-project .about{
+        margin: 1.3em;
+        
+    }
+
+    .about-this-project .about h3{        
+        font-size: 1em;        
+        font-weight: 700;
+    }
+
+ 
+
+    .about-this-project .about p{
+        max-width: 30ch;
+        font-size: .8em;
+        margin: 1.5em 0em;
+    }
+
+    .about-this-project .pledges .header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-this-project .pledges p{
+        font-size: .9em;
+        margin: 1.5em 0em;
+    }
+
+    .about-this-project .pledges .footer .amount div{
+        font-size: 2em;
+        padding: 0em .2em;
+
+    }
+    
+    .about-this-project .pledges .footer .continue{
+        width: auto;
+        padding: 1em;
+    }
+
+    .modal-start{
+        min-width: 55vh;
+        max-height: 90vh;       
+           
+    }
+
+    .modal-start .header{
+        flex-direction: column;  
+        align-items: flex-start;    
+           
+    }   
+
+    .modal-start .header label input{
+        margin-right: 1.5em;         
+    }
+
+    .modal-start .header div:first-of-type {
+        margin-left: 2.7em;
+    }
+
+    .modal-start .header .amount{
+        margin: auto;
+    }
+
+    .modal-start .header .amount div{
+        margin-left: 0;
+        padding-left: 0;
+    }
+    
+
+    .modal-start .footer{
+        flex-direction: column;  
+        align-items: center;  
+           
+           
+    }  
+
+    .modal-start .footer p{
+        width: auto;   
+           
+    } 
+
+    .modal-start .enter-value{
+        width: 95%;  
+        justify-content: space-around;  
+        margin-top: 1.5em;
+           
+    } 
+
+    .modal-start .enter-value input, 
+    .modal-start .enter-value button{
+        padding: 1em 2em;
+        text-align: center;
+        width: 48%;           
+    } 
+
+    .modal-gratefulness p{
+        margin: 1.5em 0em;
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .modal-gratefulness .done{
+        text-align: center;
+        width: auto;
+        padding: 1em 2em;
+    }
+
+
+}

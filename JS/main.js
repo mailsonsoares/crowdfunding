@@ -1,3 +1,5 @@
+import {dataBaseBuilder} from './db.js'
+import {calcDB, updateDataSituation, updateAmountDisplay, updateProgressBar, hideFormers} from './app.js'
 // datas situation inicial
 const totalAmountPromises = document.querySelector('.total-amount-promises');
 const totalBackers = document.querySelector('.total-backers');
@@ -12,71 +14,62 @@ const overlayModal = document.getElementById('overlay-modal');
 const modalPledgeView = document.querySelectorAll('.modal-start .pledges');
 const modalStart = document.querySelector('#modal-start');
 const thankyouModal = document.querySelector('#modal-gratefulness');
-
+const menuToggle = document.querySelector('.img-toggle');
+const menu = document.querySelector('.menu');
 
 //buttons-selectors
 const btnBookmark = document.querySelector('.button.bookmark');
 const bookmarkImg = document.querySelector('#bookmark-img');
 const bookmarkSpan = document.querySelector('#bookmark-span');
 
-//forms-selector
-const standForm = document.querySelector('#bamboo-stand-form');
-const standFormInput = document.querySelector('#bamboo-stand-form input');
+//form-selector
+const pledgesForm = document.querySelectorAll('[data-pledges]');
 
+updateDataSituation(totalAmountPromises, totalBackers, leftDays);
+updateAmountDisplay()
+updateProgressBar(pBar);
 
-// "database-situation"
-const masterCraftDB = {
-    initialStatus:{
-        amountPromises: 89914,
-        goal: 100000,
-        backers: 5007,
-        daysLeft: 56
-    },
-    views:
-    [
-        {
-            name: 'Bamboo Stand',
-            reward: 101,
-            minPledge: 25,
-            display: document.querySelectorAll('.inventory'),
-            container: document.querySelectorAll('.bamboo')
-        },
-        {
-            name: 'Black Edition',
-            reward: 64,
-            minPledge: 75,
-            display: document.querySelectorAll('.inventory'),
-            container: document.querySelectorAll('.black-edition')
-        },
-        {
-            name: 'Black Edition',
-            reward: 0,
-            minPledge: 200,
-            display: document.querySelectorAll('.inventory'),
-            container: document.querySelectorAll('.black-edition')
+pledgesForm.forEach(pledge =>{
+    
+    pledge.addEventListener('submit', (evt)=>{
+
+        if(pledge.querySelector('.pledges-value') != null){
+                       
+            var valueForm = parseInt(pledge.querySelector('.pledges-value').value);
+
         }
-    ]
-}
 
-//Pledges forms
-standForm.addEventListener('submit', (evt)=>{
-    const pledgeOfAmount = parseInt(standFormInput.value);
-    calcDB(pledgeOfAmount,0)
-    updateDataSituation()
+  
+        if(pledge.dataset.pledges == "1"){               
+            closeModals(modalStart)
+            openModals(thankyouModal)
+                        
+        }else if(pledge.dataset.pledges == "2"){
+            startCalc(valueForm, 0);
+            
+        }else if(pledge.dataset.pledges == "3"){
+            startCalc(valueForm, 1);
+            
+        }else if(pledge.dataset.pledges == "4"){
+            startCalc(valueForm, 2);            
+        }
+
+        evt.preventDefault() 
+
+    })
+
+})
+
+
+function startCalc(value,indexView){
+    calcDB(value, indexView)
+    updateDataSituation(totalAmountPromises, totalBackers, leftDays)
     updateAmountDisplay()
     closeModals(modalStart)
     openModals(thankyouModal)
     soldOff()
-    updateProgressBar()
-    evt.preventDefault()   
-    
-})
-
-
-updateDataSituation()
-updateAmountDisplay()
-updateProgressBar()
-
+    updateProgressBar(pBar)      
+}
 
 // Open-Close modal
 btnOpenModal.forEach( btnClicked =>{
@@ -96,9 +89,6 @@ btnOpenModal.forEach( btnClicked =>{
         }else{
             openModals(modal);
         }
-        
-        
-
     })
 })
 
@@ -110,31 +100,6 @@ btnCloseModal.forEach(btnClicked =>{
         closeModals(modal)
     })
 })
-
- 
-function openModals(modal){
-    if(modal == null) return
-    overlayModal.classList.add('show');
-    modal.classList.add('show');
-    
-}
-
-function closeModals(modal){
-    
-    if(modal == null) return
-    //{
-    //     const modal_start = document.querySelector("#modal-start")
-    //     modal_start.classList.remove('show')
-    //     overlayModal.classList.remove('show')
-    // }else{
-        modal.classList.remove('show')
-        overlayModal.classList.remove('show')
-        uncheckRadioBtn()
-        hideFormers() 
-    // }     
-}
-
-
 
 
 // Show-hide footer pledges from the modal pledges
@@ -150,7 +115,7 @@ modalPledgeView.forEach(pledgeChecked =>{
 
 // Show-hide footer pledges from the external pledges
 function openPreviouslyChosenPledges(chosenPledge, modal){
-    //const pledge = document.querySelector("#modal-start").children[chosenPledge];
+    
     const pledge = modal.children[chosenPledge];    
     const footer = pledge.querySelector('.footer');    
     checkRadioBtn(pledge);
@@ -158,32 +123,53 @@ function openPreviouslyChosenPledges(chosenPledge, modal){
 }
 
 function toggleForm(pledgeChecked, footerPledge){
-    hideFormers()
+    const openForm = document.querySelector('.modal-start .footer.show');
+    const pledgeSelected = document.querySelector('.modal-start .pledges.show');
+    hideFormers(openForm, pledgeSelected)
     pledgeChecked.classList.add('show');
     footerPledge.classList.add('show');
 }
 
-function hideFormers(){
-    const openForm = document.querySelector('.modal-start .footer.show');
-    const pledgeSelected = document.querySelector('.modal-start .pledges.show');
-    if(openForm && pledgeSelected){
-        openForm.classList.remove('show');
-        pledgeSelected.classList.remove('show');
-    }
-}
-
 function uncheckRadioBtn(){
     let allRadioBtns = []; 
-    allRadioBtns = document.querySelectorAll('.radio-pledges');   
-    for( radioBtn of allRadioBtns){
-        radioBtn.checked = false;
-    }
+    allRadioBtns = document.querySelectorAll('.radio-pledges');
+
+    allRadioBtns.forEach(radio =>{
+        radio.checked = false;
+    })
+
+}
+
+
+function openModals(modal){
+    if(modal == null) return
+    overlayModal.classList.add('show');
+    modal.classList.add('show');
+    
+}
+
+function closeModals(modal){
+    
+    if(modal == null) return    
+    modal.classList.remove('show')
+    overlayModal.classList.remove('show')
+    uncheckRadioBtn()
+    limpaInputs()
+    hideFormers()  
 }
 
 function checkRadioBtn(pledge){
     uncheckRadioBtn();
     let radioAtual= pledge.querySelector('.radio-pledges');    
     radioAtual.checked = true; //Mark chosen radio button  
+}
+
+function limpaInputs(){
+    const allInputs = document.querySelectorAll('.pledges-value');
+
+    allInputs.forEach( input =>{
+        input.value = '';        
+    })
 }
 
 //
@@ -200,45 +186,25 @@ btnBookmark.addEventListener('click', ()=>{
 
 })
 
-//updates the db values
-function calcDB(amount, view){     
-    masterCraftDB.initialStatus.amountPromises += amount; //sum the promised amount;    
-    masterCraftDB.initialStatus.backers ++ //sum one more backer;
-    if(view >= 0){
-        masterCraftDB.views[view].reward-- //subtracts a reward.
-    }
-}
-
-function updateDataSituation(){    
-    totalAmountPromises.textContent = `$${masterCraftDB.initialStatus.amountPromises}`;
-    totalBackers.textContent = `${masterCraftDB.initialStatus.backers}`;
-    leftDays.textContent = `${masterCraftDB.initialStatus.daysLeft}`;
-
-}
-
-function updateAmountDisplay(){
-    masterCraftDB.views.forEach(view =>{
-        view.display.forEach(display =>{
-            display.innerHTML = `${view.reward}`
-        })
-    })
-}
 
 function soldOff(){
-    masterCraftDB.views.forEach(view =>{
+    dataBaseBuilder.views.forEach(view =>{
         if(view.reward === 0){
             view.container.forEach(container =>{
+                
                 container.classList.add('sold-off');
                 const button = container.querySelector('button');
                 button.textContent = 'Sold off'
+                button.classList.add('sold-off-button')
             })
         }
     })
 }
 
-function updateProgressBar(){
-    const pb = (masterCraftDB.initialStatus.amountPromises/masterCraftDB.initialStatus.goal)*100;
-    pBar.style.width = `${pb}%`;
+menuToggle.addEventListener('click', () =>{
+    menu.classList.toggle('show');
+})
 
-}
+
+
 
