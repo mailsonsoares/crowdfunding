@@ -1,5 +1,5 @@
 import {dataBaseBuilder} from './db.js'
-import {calcDB, updateDataSituation, updateAmountDisplay, updateProgressBar, hideFormers} from './app.js'
+import {calcDB, updateDataSituation, updateAmountDisplay, updateProgressBar} from './app.js'
 // datas situation inicial
 const totalAmountPromises = document.querySelector('.total-amount-promises');
 const totalBackers = document.querySelector('.total-backers');
@@ -123,9 +123,8 @@ function openPreviouslyChosenPledges(chosenPledge, modal){
 }
 
 function toggleForm(pledgeChecked, footerPledge){
-    const openForm = document.querySelector('.modal-start .footer.show');
-    const pledgeSelected = document.querySelector('.modal-start .pledges.show');
-    hideFormers(openForm, pledgeSelected)
+        
+    hideFormers()
     pledgeChecked.classList.add('show');
     footerPledge.classList.add('show');
 }
@@ -185,6 +184,18 @@ btnBookmark.addEventListener('click', ()=>{
     }
 
 })
+
+
+function hideFormers(){
+
+    const openForm = document.querySelector('.modal-start .footer.show');
+    const pledgeSelected = document.querySelector('.modal-start .pledges.show');
+    
+    if(openForm && pledgeSelected){
+        openForm.classList.remove('show');
+        pledgeSelected.classList.remove('show');
+    }
+}
 
 
 function soldOff(){

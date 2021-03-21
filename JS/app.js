@@ -30,11 +30,3 @@ export function updateProgressBar(pBar){
     pBar.style.width = `${pb}%`;
 
 }
-
-export function hideFormers(openForm, pledgeSelected){
-    
-    if(openForm && pledgeSelected){
-        openForm.classList.remove('show');
-        pledgeSelected.classList.remove('show');
-    }
-}
