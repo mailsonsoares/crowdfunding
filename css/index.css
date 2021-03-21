@@ -318,12 +318,11 @@ main .container{
     margin: 1.5em 0em;   
 }
 
-
-
 .about-pledges{
     width: 90%;
     margin-bottom: 1.5em;
 }
+
 .about p, .about-pledges p{
     max-width: 60ch;
 }
@@ -367,34 +366,29 @@ main .container{
     align-items: center;
     border-top: 1px solid var(--neutral-dark-gray);    
     padding: 1em;
-    margin: 0 auto;
 }
 
 
-.modal-start .footer.show{
+.modal-start .footer p{
     
-    width: 100%;       
+    width: 50%;       
 }
 
 .enter-value{
     display: flex;  
-    justify-content: space-between;
-    align-items: center; 
-    text-align: center;     
+    justify-content: space-around;
+    align-items: center;      
 }
 
 .enter-value .continue, .enter-value input, .done{    
     border-radius: var(--radius-button);
-   
+    padding: 1em 1em;   
 }
 
 .enter-value input, .enter-value .continue {
-    width: 45%;     
+    width: 40%;     
 }
 
-.enter-value input{
-    padding-left: 1rem;     
-}
 
 .enter-value .continue, .done{   
     border-style: none;
@@ -607,11 +601,11 @@ main .container{
     }
 
     main{
-        margin-top: -28%;
+        margin-top: -30%;
     }
 
     main .container{
-        margin-top: -3%;        
+        margin-top: -5%;        
         width: 98%;
     }
 
